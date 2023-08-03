@@ -12,6 +12,7 @@ version = "1.0-SNAPSHOT"
 
 dependencies {
     api(libs.platform)
+    api(libs.caffeine)
 
     api(libs.bundles.logging)
     api(libs.bundles.kotlin)

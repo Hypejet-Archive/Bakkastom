@@ -7,6 +7,8 @@ kotlin = "1.9.0"
 configs = "4.0.9"
 json = "20230618"
 
+caffeine = "3.1.2"
+
 platform = "1.1.1"
 
 
@@ -16,7 +18,7 @@ logback-core = { group = "ch.qos.logback", name = "logback-core", version.ref = 
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 
 platform = { module = "org.hypejet:platform", version.ref = "platform" }
-
+caffeine = { group = "com.github.ben-manes.caffeine", name = "caffeine", version.ref = "caffeine" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 

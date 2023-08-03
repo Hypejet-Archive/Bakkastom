@@ -1,5 +1,6 @@
 package org.hypejet.bakka
 
+import org.hypejet.bakka.event.GlobalEventHandler
 import org.hypejet.bakka.module.SussyModule
 import java.net.InetSocketAddress
 import java.net.SocketAddress
@@ -12,10 +13,14 @@ object AmogusServer {
 
     val modules = ArrayList<SussyModule>()
 
+    lateinit var globalEventHandler: GlobalEventHandler
+        private set
+
     lateinit var serverProcess: ServerProcess
         private set
 
     fun init() {
+        globalEventHandler = GlobalEventHandler()
         modules.forEach { it.enable() }
 
         serverProcess = ServerProcess()
