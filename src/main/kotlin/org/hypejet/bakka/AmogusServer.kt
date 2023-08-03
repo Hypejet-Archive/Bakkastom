@@ -1,8 +1,36 @@
 package org.hypejet.bakka
 
-interface AmogusServer {
+import org.hypejet.bakka.module.SussyModule
+import java.net.InetSocketAddress
+import java.net.SocketAddress
+import kotlin.properties.Delegates
+
+object AmogusServer {
+
+    const val DEFAULT_ADDRESS = "0.0.0.0"
+    const val DEFAULT_PORT = 443
+
+    val modules = ArrayList<SussyModule>()
+
+    lateinit var serverProcess: ServerProcess
+        private set
+
+    fun init() {
+        modules.forEach { it.enable() }
+
+        serverProcess = ServerProcess()
+    }
+
+    fun start(socketAddress: SocketAddress) {
+        serverProcess.start(socketAddress)
+    }
+
+    fun start(address: String, port: Int) {
+        start(InetSocketAddress(address, port))
+    }
+
     fun stopCleanly() {
-        AmogusServerImpl.INSTANCE.modules.forEach { it.disable() }
-        AmogusServerImpl.serverProcess.stop()
+        modules.forEach { it.disable() }
+        serverProcess.stop()
     }
 }

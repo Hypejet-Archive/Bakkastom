@@ -1,11 +1,13 @@
 package org.hypejet.bakka
 
+import java.net.SocketAddress
+
 class ServerProcess {
-    fun start(port: Int, address: String) {
-        AmogusServerImpl.INSTANCE.modules.forEach { it.start() }
+    fun start(address: SocketAddress) {
+        AmogusServer.modules.forEach { it.start() }
     }
 
     fun stop() {
-        AmogusServerImpl.INSTANCE.modules.forEach { it.stop() }
+        AmogusServer.modules.forEach { it.stop() }
     }
 }
