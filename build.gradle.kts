@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.9.0"
+    alias(libs.plugins.kotlin)
     `maven-publish`
     id("org.jetbrains.dokka") version "1.8.20"
     `java-library`
@@ -11,7 +11,11 @@ group = "org.hypejet"
 version = "1.0-SNAPSHOT"
 
 dependencies {
+    api(libs.platform)
 
+    api(libs.bundles.logging)
+    api(libs.bundles.kotlin)
+    api(libs.bundles.config)
 }
 
 kotlin.jvmToolchain(17)

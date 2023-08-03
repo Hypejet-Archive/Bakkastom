@@ -1,0 +1,35 @@
+[versions]
+slf4j = "2.0.7"
+logback = "1.4.5"
+
+kotlin = "1.9.0"
+
+configs = "4.0.9"
+json = "20230618"
+
+platform = "1.1.1"
+
+
+[libraries]
+slf4j = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j"}
+logback-core = { group = "ch.qos.logback", name = "logback-core", version.ref = "logback" }
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+
+platform = { module = "org.hypejet:platform", version.ref = "platform" }
+
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+
+json = { module = "org.json:json", version.ref = "json" }
+configs-hjson = { module = "eu.okaeri:okaeri-configs-hjson", version.ref = "configs" }
+configs-yaml-snakeyaml = { module = "eu.okaeri:okaeri-configs-yaml-snakeyaml", version.ref = "configs" }
+configs-serdes-commons = { module = "eu.okaeri:okaeri-configs-serdes-commons", version.ref = "configs" }
+
+
+[bundles]
+logging = ["logback-core", "logback-classic", "slf4j"]
+kotlin = ["kotlin-stdlib-jdk8", "kotlin-reflect"]
+config = ["json", "configs-hjson", "configs-yaml-snakeyaml", "configs-serdes-commons"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
