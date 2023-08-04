@@ -1,6 +1,8 @@
 ![banner](banner_dark.png#gh-dark-mode-only)
 ![banner](banner_light.png#gh-light-mode-only)
 
+`⚠️ NOTE:` For now only among us 2020.9.9 protocol is supported!
+
 # Bakkastom
 
 [![license](https://img.shields.io/github/license/Bakkastom/Bakkastom?style=for-the-badge&color=b2204c)](../LICENSE)
